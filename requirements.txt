@@ -1,0 +1,6 @@
+openai>=2.20.0
+Pillow>=11.3.0
+youtube-transcript-api>=1.2.4
+yt-dlp>=2025.10.14
+imageio-ffmpeg>=0.6.0
+streamlit>=1.50.0
