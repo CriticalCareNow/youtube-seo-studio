@@ -16,7 +16,12 @@ st.caption('Drop your video and optional speaker image. Copy/paste-ready output 
 
 with st.sidebar:
     st.header('Settings')
-    api_key = st.text_input('OpenAI API Key', type='password', value='')
+    secret_api_key = st.secrets.get('OPENAI_API_KEY', '')
+    if secret_api_key:
+        st.success('Using workspace API key from Streamlit secrets.')
+        api_key = secret_api_key
+    else:
+        api_key = st.text_input('OpenAI API Key', type='password', value='')
     model = st.text_input('SEO Model', value='gpt-4.1')
     transcript_model = st.text_input('Transcription Model', value='gpt-4o-mini-transcribe')
     chapter_style = st.selectbox('Chapter Style', ['super_short', 'short', 'standard'], index=0)
