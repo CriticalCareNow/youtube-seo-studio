@@ -7,7 +7,7 @@ import streamlit as st
 
 from src.youtube_seo_tool import run_pipeline
 
-PROJECT_DIR = Path('/Users/haneymallemat/Documents/New project')
+PROJECT_DIR = Path(__file__).resolve().parent
 OUTPUT_ROOT = PROJECT_DIR / 'output' / 'app-runs'
 
 st.set_page_config(page_title='YouTube SEO Studio', page_icon='🎬', layout='wide')
